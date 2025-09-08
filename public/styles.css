@@ -86,7 +86,7 @@ nav a:hover {
     color: #fff5ec;
 }
 
-#ingredient-input {
+#ingredient-input , form input, form textarea {
     display: block;
     margin: 2rem auto;
     padding: 0.5rem;
@@ -203,4 +203,24 @@ ol
   width: 76%;
   margin: 0 auto;
   font-size: 1.2rem;
+}
+label
+{
+    font-size: 1.3em;
+}
+
+form input, form textarea
+{
+  margin: 0;
+  margin-top: 1em;
+  width: 60%;
+  max-width: revert;
+}
+
+form textarea{
+  display: block;
+}
+
+#ingredients , #instructions{
+  height: 12rem;
 }
