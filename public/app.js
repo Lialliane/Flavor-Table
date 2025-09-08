@@ -6,13 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function saveFavorite(title, image, id, event) {
+async function saveFavorite(title, image, id, event) {
   event.stopPropagation();
-  console.log("clicked button");
-  console.log(event);
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  favorites.push({ title, image , id });
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+
+  const response = await fetch(`/recipes/details/${id}`);
+  const data = await response.json();
+
+  await fetch("/favorites", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ 
+      id, 
+      title , 
+      image , 
+      instructions: data.instructions,
+      ingredients: data.ingredients, 
+      readyin: data.readyin })
+  });
 }
 
 

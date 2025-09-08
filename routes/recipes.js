@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 
+
 const API_KEY = process.env.SPOONACULAR_KEY;
 const BASE_URL = "https://api.spoonacular.com";
 
@@ -18,7 +19,7 @@ router.get("/random", async (req, res) => {
       image: recipe.image,
       servings: recipe.servings,
       cookingTime: recipe.cookingMinutes,
-      duration: recipe.readyInMinutes,
+      readyin: recipe.readyInMinutes,
       instructions: recipe.instructions,
       ingredients: recipe.extendedIngredients.map(i => i.original)
     };
@@ -68,7 +69,7 @@ router.get("/details/:id", async (req, res) => {
       image: recipe.image,
       servings: recipe.servings,
       cookingTime: recipe.cookingMinutes,
-      duration: recipe.readyInMinutes,
+      readyin: recipe.readyInMinutes,
       instructions: recipe.instructions,
       ingredients: recipe.extendedIngredients.map(i => i.original)
     };

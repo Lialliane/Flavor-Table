@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Edit Recipes</title>
+</head>
+<body>
+    <nav>
+    <div class="nav-item" id="logo">
+      <img src="./kitchen.png" alt="logo icon"/>
+      <a href="index.html">Recipe Vualt</a>
+    </div>
+    <div class="nav-item">
+      <img src="./search.png" alt="search icon"/>
+      <a href="index.html">Search</a>
+    </div>
+    <div class="nav-item">
+      <img src="./recipe.png" alt="recipe icon"/>
+      <a href="randomRecipes.html">Random Recipe</a>
+    </div>
+    <div class="nav-item">
+      <img src="./fav.png" alt="favorite icon"/>
+      <a href="favorites.html">Favorites</a>
+    </div>
+  </nav>
+  <div class="header">
+    <img src="./noodles.png" alt="noodle icon" />
+    <h1>Edit Recipe</h1>
+    <img src="./rice.png" alt="noodle icon" />
+  </div>
+  <div id="recipe">
+    <form id="editForm">
+    <input type="hidden" id="recipeId">
+
+    <label>Title:</label>
+    <input type="text" id="title" required><br>
+
+    <label>Image URL:</label>
+    <input type="text" id="image"><br>
+
+    <label>Instructions:</label>
+    <textarea id="instructions"></textarea><br>
+
+    <label>Ingredients (comma-separated):</label>
+    <textarea id="ingredients"></textarea><br>
+
+    <label>Ready In (minutes):</label>
+    <input type="number" id="readyin"><br>
+
+    <button type="submit">Update Recipe</button>
+  </form>
+
+  </div>
+  
+
+  <script src="edit.js"></script>
+</body>
+</html>

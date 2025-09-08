@@ -11,11 +11,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div>
         <h4>Servings: ${data.servings? data.servings: "-"}</h4>
         <h4>Cooking time: ${data.cookingTime?data.cookingTime: "-"}</h4>
-        <h4>Total prep time:${data.duration? data.duration: "-"} </h4>
+        <h4>Total prep time:${data.readyin? data.readyin: "-"} </h4>
       </div>
       <ol>${data.ingredients.map(ingredient => `<li>${ingredient}</li>`).join("")}</ol>
       <p>${data.instructions}</p>
-      <button onclick="saveFavorite('${data.title}', '${data.image}', '${data.id}')">Save</button>
+      <button onclick="saveFavorite('${data.title}', 
+      '${data.image}', 
+      '${data.recipe_id? data.recipe_id: data.id}', 
+      '${data.instructions}', 
+      '${data.ingredients}', 
+      '${data.readyin}',)">Save</button>
     `;
     
   } 
@@ -25,9 +30,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-function saveFavorite(title, image, id)
-{
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  favorites.push({ title, image, id });
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+
+async function saveFavorite(title, image, id, instructions, ingredients, readyin) {
+  
+  await fetch("/favorites", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id, title, image, instructions, ingredients, readyin })
+  });
 }
+
+
