@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flavor Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+        <div class="nav-item" id="logo">
+            <img src="./kitchen.png" alt="logo icon"/>
+            <a href="index.html">Recipe Vualt</a>
+        </div>
+        <div class="nav-item">
+            <img src="./search.png" alt="search icon"/>
+            <a href="index.html">Search</a>
+        </div>
+        <div class="nav-item">
+            <img src="./recipe.png" alt="recipe icon"/>
+            <a href="randomRecipes.html">Random Recipe</a>
+        </div>
+    </nav>
+    <div class="header">
+        <img src="./noodles.png" alt="noodle icon" />
+        <h1>Login</h1>
+        <img src="./rice.png" alt="noodle icon" />
+    </div>
+    <section id="login-switch">
+        <div class="login-switch-tab" id="login-tab">Login</div> 
+        <div class="login-switch-tab inactive" id="register-tab">Register</div>
+    </section>
+    <form id="login-form">
+        <input class="hidden" id="email-input" placeholder="Email">
+        <input id="username-input" placeholder="User Name" required>
+        <input id="password-input" placeholder="Password"  required>
+        <button type="submit" id="login-button">submit</button>
+    </form>
+    <div id="modal-1" class="modal">
+        <div class="modal-body">
+            <div id="content"></div>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>

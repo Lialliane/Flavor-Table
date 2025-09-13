@@ -42,19 +42,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       <p>${data.instructions}</p>
       ${exist 
       ? `<button onclick="editRecipe(
-        '${data.id}', 
-        '${data.title}',
-        '${data.image}',
-        '${data.instructions}',
-        '${data.ingredients}',
-        '${data.readyin}')">Edit Recipe</button>`
+        '${(data.id)}', 
+        '${escapeJS(data.title)}',
+        '${escapeJS(data.image)}',
+        '${escapeJS(data.instructions)}',
+        '${escapeJS(data.ingredients)}',
+        '${escapeJS(data.readyin)}')">Edit Recipe</button>`
       : `<button onclick="saveFavorite(
-        \`${data.title}\`, 
-        \`${data.image}\`, 
-        '${data.recipe_id}', 
-        \`${data.instructions}\`, 
-        \`${data.ingredients}\`, 
-        \`${data.readyin}\`)">Save</button>`}`;
+        \`${escapeJS(data.title)}\`, 
+        \`${escapeJS(data.image)}\`, 
+        '${escapeJS(data.recipe_id)}', 
+        \`${escapeJS(data.instructions)}\`, 
+        \`${escapeJS(data.ingredients)}\`, 
+        \`${escapeJS(data.readyin)}\`)">Save</button>`}`;
     
   } 
   catch (error) {
@@ -74,4 +74,14 @@ async function saveFavorite(title, image, id, instructions, ingredients, readyin
 async function editRecipe(id, title, image, instructions, ingredients, readyin)
 {
   window.location.href = `/editRecipe.html?id=${id}&title=${title}&image=${image}&instructions=${instructions}&ingredients=${ingredients}&readyin=${readyin}`;
+}
+
+function escapeJS(str) 
+{
+  if(typeof(str) == 'string')
+  {
+    return str.replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, "\\n");
+  }
+  else
+      return str;
 }
