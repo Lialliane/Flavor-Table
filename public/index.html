@@ -6,22 +6,26 @@
 </head>
 <body>
   <nav>
-    <div class="nav-item" id="logo">
-      <img src="./kitchen.png" alt="logo icon"/>
-      <a href="index.html">Recipe Vualt</a>
-    </div>
-    <div class="nav-item">
-      <img src="./search.png" alt="search icon"/>
-      <a href="index.html">Search</a>
-    </div>
-    <div class="nav-item">
-      <img src="./recipe.png" alt="recipe icon"/>
-      <a href="randomRecipes.html">Random Recipe</a>
-    </div>
-    <div class="nav-item">
-      <img src="./fav.png" alt="favorite icon"/>
-      <a href="favorites.html">Favorites</a>
-    </div>
+      <div class="nav-item" id="logo">
+        <img src="./kitchen.png" alt="logo icon"/>
+        <a href="index.html">Recipe Vualt</a>
+      </div>
+      <div class="nav-item">
+        <img src="./search.png" alt="search icon"/>
+        <a href="index.html">Search</a>
+      </div>
+      <div class="nav-item">
+        <img src="./recipe.png" alt="recipe icon"/>
+        <a href="randomRecipes.html">Random Recipe</a>
+      </div>
+      <div class="nav-item" id="fav-nav">
+        <img src="./fav.png" alt="favorite icon"/>
+        <a href="favorites.html">Favorites</a>
+      </div>
+      <div class="nav-item" id="login-nav">
+        <img src="./login.png" alt="login icon"/>
+        <a href="login.html">Login/Register</a>
+      </div>
   </nav>
   <div class="header">
     <img src="./noodles.png" alt="noodle icon" />
@@ -31,6 +35,13 @@
   <input id="ingredient-input" placeholder="Enter ingredients (Egg, Chicken,....)">
   <button id="search-button">Search</button>
   <div id="results"></div>
+
+  <div id="modal-1" class="modal">
+    <div class="modal-body">
+        <div id="content"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
   <script src="./app.js"></script>
 </body>

@@ -6,22 +6,22 @@
 </head>
 <body>
   <nav>
-    <div class="nav-item" id="logo">
-      <img src="./kitchen.png" alt="logo icon"/>
-      <a href="index.html">Recipe Vualt</a>
-    </div>
-    <div class="nav-item">
-      <img src="./search.png" alt="search icon"/>
-      <a href="index.html">Search</a>
-    </div>
-    <div class="nav-item">
-      <img src="./recipe.png" alt="recipe icon"/>
-      <a href="randomRecipes.html">Random Recipe</a>
-    </div>
-    <div class="nav-item">
-      <img src="./fav.png" alt="favorite icon"/>
-      <a href="favorites.html">Favorites</a>
-    </div>
+      <div class="nav-item" id="logo">
+        <img src="./kitchen.png" alt="logo icon"/>
+        <a href="index.html">Recipe Vualt</a>
+      </div>
+      <div class="nav-item">
+        <img src="./search.png" alt="search icon"/>
+        <a href="index.html">Search</a>
+      </div>
+      <div class="nav-item">
+        <img src="./recipe.png" alt="recipe icon"/>
+        <a href="randomRecipes.html">Random Recipe</a>
+      </div>
+      <div class="nav-item">
+        <img src="./fav.png" alt="favorite icon"/>
+        <a href="favorites.html">Favorites</a>
+      </div>
   </nav>
   <div class="header">
     <img src="./noodles.png" alt="noodle icon" />
@@ -29,6 +29,13 @@
     <img src="./rice.png" alt="noodle icon" />
   </div>
   <div id="favoritesList"></div>
+
+  <div id="modal-1" class="modal">
+    <div class="modal-body">
+        <div id="content"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
   <script src="favorites.js"></script>
 </body>

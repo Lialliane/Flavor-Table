@@ -20,10 +20,14 @@ app.use(express.static(path.join(__dirname, "public")));
 const homeRoutes = require("./routes/home");
 const recipeRoutes = require("./routes/recipes");
 const favoritesRoutes = require("./routes/favorites");
+const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/users");
 
 app.use("/", homeRoutes);
 app.use("/recipes", recipeRoutes);
 app.use("/favorites", favoritesRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(morgan("dev"));
 
